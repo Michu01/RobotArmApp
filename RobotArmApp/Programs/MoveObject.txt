@@ -1,0 +1,15 @@
+SetAll 173 71 97 50 4 10
+Delay 2000
+SetAll 173 19 59 50 4 10
+Delay 2000
+SetAll 173 19 59 50 4 90
+Delay 2000
+SetAll 173 73 99 50 4 90
+Delay 2000
+SetAll 75 73 99 50 4 90
+Delay 2000
+SetAll 75 15 63 51 0 90
+Delay 2000
+SetAll 75 15 63 51 0 10
+Delay 2000
+SetAll 75 69 101 50 0 10

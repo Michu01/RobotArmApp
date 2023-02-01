@@ -1,0 +1,82 @@
+﻿<Page x:Class="RobotArmApp.Views.ControllerSteeringView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:viewmodels="clr-namespace:RobotArmApp.ViewModels"
+      mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance Type=viewmodels:ControllerSteeringViewModel}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ControllerSteeringView">
+    <Page.Resources>
+        <ControlTemplate x:Key="axisControlTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ProgressBar Grid.ColumnSpan="3" Minimum="{Binding Minimum}" Maximum="{Binding Maximum}" Value="{Binding Position}"/>
+
+                <Label Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="24" Content="{Binding Name, Mode=OneWay}"/>
+                <Label Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Content=":"/>
+                <Label Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Content="{Binding Position}"/>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="buttonControlTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="24" Content="{Binding Name, Mode=OneWay}"/>
+                <Label Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Content=":"/>
+                <Label Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Content="{Binding IsPressed}"/>
+            </Grid>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <Grid VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1">
+            <Label HorizontalAlignment="Center" FontSize="32" Content="Axes"/>
+            <ContentControl Margin="0 10" Template="{StaticResource axisControlTemplate}" DataContext="{Binding Axes[0]}"/>
+            <ContentControl Margin="0 10" Template="{StaticResource axisControlTemplate}" DataContext="{Binding Axes[1]}"/>
+            <ContentControl Margin="0 10" Template="{StaticResource axisControlTemplate}" DataContext="{Binding Axes[2]}"/>
+            <ContentControl Margin="0 10" Template="{StaticResource axisControlTemplate}" DataContext="{Binding Axes[3]}"/>
+            <ContentControl Margin="0 10" Template="{StaticResource axisControlTemplate}" DataContext="{Binding Axes[4]}"/>
+            <ContentControl Margin="0 10" Template="{StaticResource axisControlTemplate}" DataContext="{Binding Axes[5]}"/>
+            <ContentControl Margin="0 10" Template="{StaticResource axisControlTemplate}" DataContext="{Binding Axes[6]}"/>
+            <ContentControl Margin="0 10" Template="{StaticResource axisControlTemplate}" DataContext="{Binding Axes[7]}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="3">
+            <Label HorizontalAlignment="Center" FontSize="32" Content="Buttons"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[0]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[1]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[2]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[3]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[4]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[5]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[6]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[7]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[8]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[9]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[10]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[11]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[12]}"/>
+            <ContentControl Template="{StaticResource buttonControlTemplate}" DataContext="{Binding Buttons[13]}"/>
+        </StackPanel>
+    </Grid>
+</Page>
